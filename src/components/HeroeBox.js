@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const HeroeBox = (props) => {
     return (
         <div className='heroeBox'>
-            {/* <img src={props.thumbnail} height="42" width="42"/> */}
+            <img src={props.thumbnail} height="42" width="42"/>
             <Link to={`/heroePage/`+props.id}>{props.name} </Link>
             <ul>
             {props.urls.map((url) => <li key={url.type} ><a href={url.url} target="_blank">{url.type} </a></li>)}
