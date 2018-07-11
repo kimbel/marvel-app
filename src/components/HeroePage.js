@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import md5 from 'crypto-js/md5'
+import {Link} from 'react-router-dom'
 
 const currentTs = Date.now() / 1000
 const apiPublic = '298bab46381a6daaaee19aa5c8cafea5'
@@ -39,13 +40,12 @@ class HeroePage extends React.Component {
             <div>
                 <p>{this.state.name}</p>
                 <p>{this.state.description}</p>
-                <ul>
-                {this.state.comics.map(comic => <li key={comic.name}><a href={comic.resourceURI} target="_blank">{comic.name} </a></li>)}
-                </ul>
-                {/* {this.state.comics.items.map(item => <p>cuouc</p>)} */}
                 <h1>Comics</h1>
-                {/* <p>{this.state.heroeInfos.map(heroeInfo => <p>comic.available</p>)}</p> */}
-                {/* {this.state.heroeInfos.comics.items.map(item => <p>item.name</p> )} */}
+                <ul>
+                {/* {this.state.comics.map(comic => <li key={comic.name}><a href={comic.resourceURI} target="_blank">{comic.name} </a></li>)} */}
+                {this.state.comics.map(comic => <li key={comic.name}>{comic.name}</li>)}
+                </ul>
+                <Link to='/'>Go back</Link>
             </div>
         )
     }

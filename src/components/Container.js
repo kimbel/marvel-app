@@ -32,8 +32,8 @@ export default class Container extends React.Component {
 
     render () {
         return (
-            <div>
-                <h1>Marvel Superheroes</h1>
+            <div className='container'>
+                <h1 className='container__h1'>Marvel Superheroes</h1>
                 {this.state.characters.map(character => <HeroeBox key={character.id} name={character.name} urls={character.urls} thumbnail={character.thumbnail.path} id={character.id}/>)}
             </div>
           )
